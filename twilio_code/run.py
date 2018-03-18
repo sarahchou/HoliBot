@@ -1,5 +1,5 @@
 # /usr/bin/env python
-# Download the twilio-python library from twilio.com/docs/libraries/python
+# Download the twilio_code-python library from twilio_code.com/docs/libraries/python
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 

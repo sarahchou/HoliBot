@@ -1,6 +1,0 @@
-from datetime import date
-
-def daily():
-  for holiday in all_holidays:
-    if holidays[holiday.sub(0, holiday.find(" ")] == today.month & holidays[holiday.sub(holiday.find(" ") + 1, len(holiday):
-      print("Today is " + holidays[holiday]
