@@ -4,6 +4,7 @@ from HolidayAssign import HolidayAssign
 
 app = Flask(__name__)
 
+
 @app.route("/sms", methods=['GET', 'POST'])
 def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
@@ -17,18 +18,21 @@ def incoming_sms():
     holidayList = HolidayAssign()
     date_holiday_dict = holidayList.create_dict()
 
-    if date in date_holiday_dict:
-        resp.message(date + "is " + date_holiday_dict[date])
+    if date in date_holiday_dict.keys():
+        resp.message(date + " is " + date_holiday_dict[date])
 
     # Determine the right reply for this message
-    if date == 'hello':
+    elif date == 'hello':
         resp.message("Hi!")
     elif date == 'bye':
         resp.message("Goodbye")
-    else:
-        resp.message("The message you typed is unsupported. Please reply with either a valid March date, or the words hello or bye")
+    elif not date in date_holiday_dict.keys():
+        resp.message(
+            "The message you typed is currently unsupported. Please reply with either a valid March date, "
+            "or the words hello or bye")
 
     return str(resp)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
