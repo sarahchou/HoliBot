@@ -9,6 +9,6 @@ auth_token = "6a1cc56819a834b67afa3f43023257a4"
 client = Client(account_sid, auth_token)
 
 client.api.account.messages.create(
-    to="15105007810",
+    to="14156806162",
     from_="+14152125236",
-    body="Hello there! Is this Vaughns phone?")
+    body="Hello there! I am HoliBot. Reply with 1 for a new random weird holiday. Reply STOP to cancel")
