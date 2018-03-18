@@ -8,15 +8,15 @@ class HolidayAssign:
     @staticmethod
     def create_dict():
         # open the files
-        march_holidays = open("marchholidays.txt", "r")
+        all_holidays = open("allholidays.txt", "r")
 
         # initialize an empty dictionary
         holidays = collections.OrderedDict()
 
         # loop through the dates in the dates file
-        with open('marchdates.txt') as f:
+        with open('alldates.txt') as f:
             for line in f:
-                holidays[line.rstrip()] = march_holidays.readline()
+                holidays[line.rstrip()] = all_holidays.readline()
 
         return holidays
 
