@@ -33,26 +33,34 @@ def incoming_sms():
 
     if date == "Hi":
         resp.message(
-            "Hello there! I am HoliBot, created by Sarah and Vaughn. Text me a date in the format "
-            "(month day) for a random weird holiday that falls on that day. For example: March 05")
+            "Hello! I am HoliBot, created by Sarah and Vaughn. Text me a date "
+            "for a random weird holiday that falls on that day. For example: March 05")
+
 
     elif date in date_holiday_dict.keys():
         #stars = format_stars(date_holiday_dict[date])
-        resp.message(date + " is " + date_holiday_dict[date])
-
-    # Determine the right reply for this message
-    elif date == 'hello' or "Hello":
-        resp.message("Hi!")
-    elif date == 'bye':
-        resp.message("Goodbye")
-    elif date == "Thanks" or "thanks":
-        resp.message("You're welcome!")
-    elif date == "Stop" or "STOP":
-        resp.message("Ok. Will stop sending holidays. HoliBot signing off now!")
+        resp.message(date + " is " + date_holiday_dict[date] + "!")
     elif not date in date_holiday_dict.keys():
         resp.message(
             "The message you typed is currently unsupported. Perhaps the date has no weird holiday yet. Please reply with a valid date to "
             "get a weird holiday on that date.")
+
+
+    # # Determine the right reply for this message
+    # elif date == "hello" or "Hello":
+    #     resp.message("Hi!")
+    # elif date == "bye" or "Bye":
+    #     resp.message("Goodbye")
+    # elif date == "Thanks" or "thanks":
+    #     resp.message("You're welcome!")
+    # elif date == "Stop" or "STOP":
+    #     resp.message("Ok. Will stop sending holidays. HoliBot signing off now!")
+    #
+    # elif not date in date_holiday_dict.keys():
+    #     resp.message(
+    #         "The message you typed is currently unsupported. Perhaps the date has no weird holiday yet. Please reply with a valid date to "
+    #         "get a weird holiday on that date.")
+
 
     return str(resp)
 
