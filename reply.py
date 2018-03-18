@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
+from HolidayAssign import HolidayAssign
 
 app = Flask(__name__)
 
@@ -7,23 +8,28 @@ app = Flask(__name__)
 def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
-    body = request.values.get('Body', None)
+    date = request.values.get('Body', None)
 
     # Start our TwiML response
     resp = MessagingResponse()
 
-    #TODO: Read in text file/python dictionary. if body == key in dictionary: resp.message(body + "is " + value)
-    # For example, if body == March 14, resp.message should be March 14 is National Pancake day!
+    # Dictionary of Dates to Holidays
+    holidayList = HolidayAssign()
+    date_holiday_dict = holidayList.create_dict()
+
+    if date in date_holiday_dict:
+        resp.message(date + "is " + date_holiday_dict[date])
 
     # Determine the right reply for this message
-    if body == 'hello':
+    if date == 'hello':
         resp.message("Hi!")
-    elif body == 'bye':
+    elif date == 'bye':
         resp.message("Goodbye")
     else:
-        resp.message("The message you typed is unsupported. Please reply with either hello or bye")
+        resp.message("The message you typed is unsupported. Please reply with either a valid March date, or the words hello or bye")
 
     return str(resp)
 
 if __name__ == "__main__":
     app.run(debug=True)
+    incoming_sms
