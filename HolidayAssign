@@ -1,0 +1,3 @@
+from datetime import date
+class Holiday(String name, year y, month m, day d):
+
