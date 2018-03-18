@@ -3,12 +3,12 @@
 from twilio.rest import Client
 
 # Find these values at https://twilio.com/user/account
-account_sid = "AC0cd74b039689afeb86f7f9909fae8ea5"
-auth_token = "6a1cc56819a834b67afa3f43023257a4"
+account_sid = "***KEY"
+auth_token = "***TOKEN"
 
 client = Client(account_sid, auth_token)
 
 client.api.account.messages.create(
-    to="14156806162",
-    from_="+14152125236",
+    to="12345559999", #your phone number here
+    from_="+14152125236", #my twilio number
     body="Hello there! I am HoliBot. Reply with 1 for a new random weird holiday. Reply STOP to cancel")
