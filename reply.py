@@ -31,9 +31,9 @@ def incoming_sms():
     holidayList = HolidayAssign()
     date_holiday_dict = holidayList.create_dict()
 
-    if date == "Hi":
+    if date == "Hi" or "Start" or "Setup HoliBot":
         resp.message(
-            "Hello there! I am HoliBot, created by Sarah and Vaughn. Text me a date in March in the format "
+            "Hello there! I am HoliBot, created by Sarah and Vaughn. Text me a date in the format "
             "(month day) for a random weird holiday that falls on that day. For example: March 05")
 
     elif date in date_holiday_dict.keys():
@@ -41,14 +41,18 @@ def incoming_sms():
         resp.message(date + " is " + date_holiday_dict[date])
 
     # Determine the right reply for this message
-    elif date == 'hello':
+    elif date == 'hello' or "Hello":
         resp.message("Hi!")
     elif date == 'bye':
         resp.message("Goodbye")
+    elif date == "Thanks" or "thanks":
+        resp.message("You're welcome!")
+    elif date == "Stop" or "STOP":
+        resp.message("Ok. Will stop sending holidays. HoliBot signing off now!")
     elif not date in date_holiday_dict.keys():
         resp.message(
-            "The message you typed is currently unsupported. Perhaps the date has no weird holiday yet. Please reply with either a valid March date, "
-            "or the words hello or bye")
+            "The message you typed is currently unsupported. Perhaps the date has no weird holiday yet. Please reply with a valid date to "
+            "get a weird holiday on that date.")
 
     return str(resp)
 
