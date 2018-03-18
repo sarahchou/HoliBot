@@ -9,6 +9,6 @@ auth_token = "6a1cc56819a834b67afa3f43023257a4"
 client = Client(account_sid, auth_token)
 
 client.api.account.messages.create(
-    to="+14156806162",
+    to="15105007810",
     from_="+14152125236",
-    body="Hello there!")
+    body="Hello there! Is this Vaughns phone?")
