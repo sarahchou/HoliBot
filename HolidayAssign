@@ -1,3 +1,24 @@
 from datetime import date
-class Holiday(String name, year y, month m, day d):
+class Holiday(String name, String date):
 
+count = 0
+marchholidays = open("marchholidays.txt", "r")
+marchdates = open("marchdates.txt", "r")
+holidays={}
+
+def createdict:
+  for date in marchdates:
+    holidays[count] = marchdates.readline(count)
+    count+=1
+  
+  count = 0  
+  for holiday in marchholidays:
+    holidays[holidays[count]] = marchholidays.readline(count)
+     count += 1
+  
+
+def output(String body):
+  num = 0
+  for i in holidays:
+    if body == holidays[num]:
+      out = holdays[body]
