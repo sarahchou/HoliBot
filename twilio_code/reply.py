@@ -1,6 +1,7 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio_code.HolidayAssign import HolidayAssign
+from twilio_code.daily_notif import daily
 app = Flask(__name__)
 
 def format_stars(holiday):
@@ -35,10 +36,13 @@ def incoming_sms():
             "Hello! I am HoliBot, created by Sarah and Vaughn. Text me a date "
             "for a random weird holiday that falls on that day. For example: March 05")
 
+    elif date == "Today":
+        resp.message(daily())
 
     elif date in date_holiday_dict.keys():
         #stars = format_stars(date_holiday_dict[date])
         resp.message(date + " is " + date_holiday_dict[date])
+
     elif not date in date_holiday_dict.keys():
         resp.message(
             "The message you typed is currently unsupported. Perhaps the date has no weird holiday yet. Please reply with a valid date to "
