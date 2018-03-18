@@ -39,7 +39,7 @@ def incoming_sms():
 
     elif date in date_holiday_dict.keys():
         #stars = format_stars(date_holiday_dict[date])
-        resp.message(date + " is " + date_holiday_dict[date] + "!")
+        resp.message(date + " is " + date_holiday_dict[date])
     elif not date in date_holiday_dict.keys():
         resp.message(
             "The message you typed is currently unsupported. Perhaps the date has no weird holiday yet. Please reply with a valid date to "
