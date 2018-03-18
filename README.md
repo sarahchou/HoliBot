@@ -1,7 +1,7 @@
 # HoliBot
 Superposition II Twilio Text Bot
 
-Sends a random national holiday based on the date you text it! 
+Texts you a random national holiday based on the date you text it! For example, if you text HoliBot "February 03", it will reply with "February 03 is Carrot Cake Day!" If you text HoliBot "Today" it will reply with a National Holiday that is celebrated today.
 
 Holidays are from this list: https://www.timeanddate.com/holidays/fun/. 
 
