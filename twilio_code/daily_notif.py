@@ -23,7 +23,7 @@ def daily():
         today_month = monthdict[to_day.strftime("%m")]
 
         if holiday_month == today_month and holiday_date == to_day.strftime("%d"):
-            print("Today is: " + date_holiday_dict[holiday])
+            return ("Today is: " + date_holiday_dict[holiday])
             # time.sleep(10)
 
 if __name__ == "__main__":
