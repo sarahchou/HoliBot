@@ -1,2 +1,2 @@
-# TwitBot
-Superposition II Twitter Bot
+# HoliBot
+Superposition II Twilio Text Bot
