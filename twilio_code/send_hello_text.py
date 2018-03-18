@@ -3,10 +3,8 @@
 from twilio.rest import Client
 
 # Find these values at https://twilio.com/user/account
-
-# sarah
-account_sid = "your sid here"
-auth_token = "your auth token here"
+account_sid = "your sid here" #ADD YOUR OWN
+auth_token = "your auth token here" # ADD YOUR OWN
 
 client = Client(account_sid, auth_token)
 
